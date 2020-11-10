@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Brandon Wong's Treasure Hunt Javascript Game</title>
+</head>
+<body>
+    <header>
+        <h1>Treasure Hunt Game</h1>
+        <div>
+            <p>How to play:</p>
+            <p>1) Enter your Name before clicking the “Start Digging” Button.</p>
+            <p>1) Press the “Start Digging” button below, when you’re ready</p>
+            <p>2) The objective is to find the treasure chest buried among one of the three islands.</p>
+            <p>3) You start off with 1 shovel, and each shovel has 1 use. If you have zero remaining shovels the game is
+                over.</p>
+            <p>4) Click one of the following 3 islands to dig for treasure. If you find the buried treasure, YOU WIN!!!
+            </p>
+            <p>5) To play again, click the “Play Again?” Button at the bottom.</p>
+        </div>
+        <form action="#">
+            <fieldset>
+                <input type="text" value="Name" id="name" placeholder="Name" required>
+                <label class="visuallyHidden" for="name">Name</label>
+                <input type="submit" value="Start Digging" id="startDigging">
+                <label class="visuallyHidden" for="startDigging">Start Digging</label>
+            </fieldset>
+        </form>
+    </header>
+    <main>
+        <section>
+            <h2>Treasure Hunt Game</h2>
+            <ul>
+                <li class="playerName">Player Name:</li>
+                <li class="playerScore">Player Score:</li>
+                <li class="shovelRemaining">Shovels Remaining:</li>
+            </ul>
+            <ul>
+                <li class="island island1">Island 1</li>
+                <li class="island island2">Island 2</li>
+                <li class="island island3">Island 3</li>
+            </ul>
+            <input type="button" value="Play Again?" id="playAgain">
+            <label class="visuallyHidden" for="playAgain"></label>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright &copy; Brandon Wong Juno College 2020</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
