@@ -30,7 +30,6 @@ gameApp.init = function () {
         // 1) Once the text input and input button "Start Digging" is filled and clicked, append the typed text input into the li class "playerName".
         const userNameInput = $(`#name`).val();
 
-
         // How to store the input text placeholder value to append???
         $(`.playerName`).append(` ${userNameInput}`);   
         
@@ -45,25 +44,22 @@ gameApp.init = function () {
     });
         
     // Have an event listener on the li with class of ".island" when clicked console log.
-
     $(`.island`).on(`click`, function () {
 
+        const listItemIslandSearched = `<li class=".islandSearched">Searched Island</li>`;
+
+        // empties the li when clicked, provides an fadeOut and fadeIn animation fo the new li appended with the class .islandSearched.
+        $(this).empty();
+        $(this).on(`click`).fadeOut();
+        $(this).on(`click`).fadeIn();
+        $(this).on(`click`).append(listItemIslandSearched);
+
         // check if class li ".island" is initiated when clicked
-        console.log(`island has been clicked/Searched`);
+        console.log(`island has been Searched`);
 
         // if conditional statement to determine which of the 3 islands are being clicked
 
-        // Hide the island when click and provide an alert for the details on clicking the specific island.
-
-        // $(this).on(`toggle`).hide(`<li>Island</li>`);
-        $(this).on(`click`).toggleClass(`.island1`, function () {
-            $(this).toggleClass(`.island1Searched`);
-
-        });
-
-        // $(this).on(`click`).fadeOut(`.island1`);
-        // $(this).on(`click`).append(`<li class=".island1Searched">Searched Island</li>`);
-        // $(this).on(`click`).fadeIn(`.island1Searched`);
+            
 
 
     });
