@@ -28,20 +28,20 @@ gameApp.init = function () {
         event.preventDefault();
         
         // 1) Once the text input and input button "Start Digging" is filled and clicked, append the typed text input into the li class "playerName".
-        $inputSubmit = $(`input[type="submit"]`);
+        const userNameInput = $(`#name`).val();
 
-        if ($inputSubmit.val() !== ``) {
-            // checking the submit input has been commited
-            console.log(`Game has initiated!`);
-            // How to store the input text placeholder value to append???
-            $(`.playerName`).append(`Player's Name`);        
-        } 
 
+        // How to store the input text placeholder value to append???
+        $(`.playerName`).append(` ${userNameInput}`);   
+        
         // 2) Once the text input and input button "Start Digging" is filled and clicked, update the li class "playerScore" to zero.
-
+        $(`.playerScore`).append(` 0`);
+        
         // 3) Once the text input and input button "Start Digging" is filled and clicked, update the li class "shovelRemaining" to one.
-
-
+        $(`.shovelRemaining`).append(` 1`);
+        
+        // checking the submit input has been committed
+        console.log(`Game has initiated!`);
     });
         
     // Have an event listener on the li with class of ".island" when clicked console log.
