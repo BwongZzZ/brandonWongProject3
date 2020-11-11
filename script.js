@@ -6,7 +6,19 @@
 // Namespace gameApp
 const gameApp = {};
 
-// create a global randomizer for reuseability
+// Simple array to randomize where to bury treasure from the following 3 islands
+const randomTreasure = [
+    1,
+    2,
+    3
+] 
+
+// create a variable randomizer function for reuseability
+const randomizer = function(array) {
+    const randomArrayIndex = Math.floor(Math.random() * array.length);
+    return array[randomArrayIndex];
+}
+
 
 
 // initiate the js functions for game app
@@ -38,6 +50,24 @@ gameApp.init = function () {
         
         // 3) Once the text input and input button "Start Digging" is filled and clicked, update the li class "shovelRemaining" to one.
         $(`.shovelRemaining`).append(` 1`);
+
+        // 4) Randomizer to place a class of .treasure on one of the following islands randomly and store the value of 100 points.
+        // buryRandomTreasure variable to hold the randomizer function
+        const buryRandomTreasure = randomizer(randomTreasure);
+
+        // If statement conditional, will randomly place a class of .treasureBuried on one of the following random three islands
+        if (buryRandomTreasure === 1) {
+            $(`.island1`).addClass(`.treasureBuried`);
+            console.log(`Island 1 🤫 Treasure Buried!`);
+        } else if (buryRandomTreasure === 2) {
+            $(`.island2`).addClass(`.treasureBuried`);
+            console.log(`Island 2 🤫🤫 Treasure Buried!!`);
+        } else if (buryRandomTreasure === 3) {
+            $(`.island3`).addClass(`.treasureBuried`);
+            console.log(`Island 3 🤫🤫🤫 Treasure Buried!!!`);
+        } else {
+            console.log(`error`);
+        }
         
         // checking the submit input has been committed
         console.log(`Game has initiated!`);
@@ -47,6 +77,7 @@ gameApp.init = function () {
     $(`.island`).on(`click`, function () {
 
         const listItemIslandSearched = `<li class=".islandSearched">Searched Island</li>`;
+
 
         // empties the li when clicked, provides an fadeOut and fadeIn animation fo the new li appended with the class .islandSearched.
         $(this).empty();
