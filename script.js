@@ -21,7 +21,6 @@ const treasureScore = 100;
 
 // User startingShovel is 1, is a let variable to change if score is increased.
 let startingShovel = 1;
-const gameOverShovel = 0;
 
 // create a variable randomizer function for reuseability
 const randomizer = function(array) {
@@ -37,9 +36,10 @@ gameApp.init = function () {
 
     // when page loads focus and active on the input
     $(`input`).focus();
-
+    
     // hide elements from page until initiated to show
     $(`.hideUntilSubmitted`).hide();
+    $(`.hideUntilGameOver`).hide();
 
     // When the the user to press the `Start Digging` to Initiate the game (Only if name input has been filled)
     // input the user to type their name (requirement)
@@ -54,10 +54,9 @@ gameApp.init = function () {
         // Show all hidden elements from page until input button "Start Digging" is filled and clicked
         $(`.hideUntilSubmitted`).show();
 
-        // 1) Once the text input and input button "Start Digging" is filled and clicked, append the typed text input into the li class "playerName".
         const userNameInput = $(`#name`).val();
 
-        // How to store the input text placeholder value to append???
+        // 1) Once the text input and input button "Start Digging" is filled and clicked, append the typed text input into the li class "playerName".
         $(`.playerName p`).append(` ${userNameInput}`);   
         
         // 2) Once the text input and input button "Start Digging" is filled and clicked, update the li class "playerScore" to zero.
@@ -94,10 +93,24 @@ gameApp.init = function () {
         if ($(this).hasClass(`treasureBuried`)) {
             // console.log(`🥳 TREASURE FOUND 💎 💯 POINTS!!!`);
             $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`🥳 TREASURE FOUND 💎 💯 POINTS!!!`);
-            $(`.playerScore`).empty().fadeOut().fadeIn().append(`Player's Score: ${startingScore + treasureScore} Points`);
+            $(`.playerScore`).empty().fadeOut().fadeIn().append(`Player Score: ${startingScore + treasureScore} Points`);
         } else {
             // console.log(`😭 Nothing Found 0 Points `);
             $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`😭 Nothing Found 0 Points`);
+        }
+
+        // userNameInput scoped within the function call to allow the value to work in the if statement template literal.
+        const userNameInput = $(`#name`).val();
+
+        // To restart the game by refreshing the page, will use location.reload to do so, by targeting the input button with the id #playAgain
+
+        // **** TRY TO FIND A IF STATEMENT THAT WORKS FOR YOU WIN ????? ****
+        if ($(`.playerScore`) === `Player Score: 100 Points`) {
+            console.log(`YOU WIN ${userNameInput}!!!`);
+            // $(`.hideUntilGameOver`).show();
+        } else {
+            console.log(`SORRY ${userNameInput} GAME OVER, PLAY AGAIN?`);
+            $(`.hideUntilGameOver`).show();
         }
     });
 
@@ -114,18 +127,17 @@ gameApp.init = function () {
         
 
         // on click empties the li initiates a fadeOut and fadeIn animation, and appends class .shovelRemaining by subtracting one shovel from the Shovel Remaining count on the game status.
-        $(`.shovelRemaining`).empty().fadeOut().fadeIn().append(`Shovels Remaining: ${startingShovel - 1} Points`);
-
-        if ($(`.shovelRemaining`) === gameOverShovel) {
-            alert(`GAME OVER!!!`);
-        }
+        $(`.shovelRemaining`).empty().fadeOut().fadeIn().append(`Shovels Remaining: ${startingShovel - 1}`);
+        
+        
+        
 
         // check if class li ".island" is initiated when clicked
         // console.log(`island has been Searched`);
 
     });
     
-    // To restart the game by refreshing the page, will use location.reload to do so, by targeting the input button with the id #playAgain
+    
     
 
     // if (location.reload() =)
