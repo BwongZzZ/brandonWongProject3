@@ -83,11 +83,12 @@ gameApp.init = function () {
             console.log(`error`);
         }
         
+        $(`#startDigging`).hide();
         // checking the submit input has been committed
         console.log(`Game has initiated!`);
     });
         
-    
+
     // If statement to update if the user clicked an island that has treasure or nothing, for each island result. When treasureBuried is found append game status and add 100 points if <li> with class of treasureBuried is found. 
 
     $(`li`).on(`click`, function () {
@@ -108,6 +109,10 @@ gameApp.init = function () {
 
         // on click empties the li initiates a fadeOut and fadeIn animation, and appends <li> with the variable listItemIslandSearched.
         $(this).empty().fadeOut().fadeIn().append(listItemIslandSearched);
+        $(`.island`).off(`click`);
+
+        // ***** use focusWithin() to target elements within the parent element  to apply a focus state. 
+        
 
         // on click empties the li initiates a fadeOut and fadeIn animation, and appends class .shovelRemaining by subtracting one shovel from the Shovel Remaining count on the game status.
         $(`.shovelRemaining`).empty().fadeOut().fadeIn().append(`Shovels Remaining: ${startingShovel - 1} Points`);
@@ -115,13 +120,13 @@ gameApp.init = function () {
         // check if class li ".island" is initiated when clicked
         console.log(`island has been Searched`);
 
-        // if conditional statement to determine which of the 3 islands are being clicked
-
             
-
-
     });
-
+    
+    // To restart the game by refreshing the page, will use location.reload to do so, by targeting the input button with the id #playAgain
+    // if (location.reload() =)
+    //     location.reload(`#playAgain`);
+    // });
 }
 
 

@@ -24,9 +24,9 @@
         <form action="#">
             <fieldset>
                 <input type="text" value="Name" id="name" placeholder="Name" required>
-                <label class="visuallyHidden" for="name">Name</label>
+                <label class="srOnly" for="name">Name</label>
                 <input type="submit" value="Start Digging" id="startDigging">
-                <label class="visuallyHidden" for="startDigging">Start Digging</label>
+                <label class="srOnly" for="startDigging">Start Digging</label>
             </fieldset>
         </form>
     </header>
@@ -39,7 +39,10 @@
                 <li class="shovelRemaining">Shovels Remaining:</li>
             </ul>
             <ul class="islandGrid hideUntilSubmitted">
-                <li class="island island1">🏝 Island 1</li>
+                <li class="island island1">
+                    <input type="button" value="🏝 Island 1" id="islandButton1">
+                    <label for="islandButton1" class="srOnly"></label>
+                </li>
                 <li class="island island2">🏝🏝Island 2</li>
                 <li class="island island3">🏝🏝🏝Island 3</li>
             </ul>
@@ -48,7 +51,7 @@
 
             </ul>
             <input type="button" value="Play Again?" id="playAgain" class="hideUntilSubmitted">
-            <label class="visuallyHidden" for="playAgain"></label>
+            <label class="srOnly" for="playAgain"></label>
         </section>
     </main>
     <footer>
