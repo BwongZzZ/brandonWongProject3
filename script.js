@@ -21,6 +21,7 @@ const treasureScore = 100;
 
 // User startingShovel is 1, is a let variable to change if score is increased.
 let startingShovel = 1;
+const gameOverShovel = 0;
 
 // create a variable randomizer function for reuseability
 const randomizer = function(array) {
@@ -45,7 +46,7 @@ gameApp.init = function () {
     $(`form`).on(`submit`, function(event) {
 
         // check if form is submitted
-        console.log(`Start Digging button has been submitted`);
+        // console.log(`Start Digging button has been submitted`);
 
         // Prevent the default behaviour of the page from refreshing
         event.preventDefault();
@@ -57,13 +58,13 @@ gameApp.init = function () {
         const userNameInput = $(`#name`).val();
 
         // How to store the input text placeholder value to append???
-        $(`.playerName`).append(` ${userNameInput}`);   
+        $(`.playerName p`).append(` ${userNameInput}`);   
         
         // 2) Once the text input and input button "Start Digging" is filled and clicked, update the li class "playerScore" to zero.
-        $(`.playerScore`).append(` ${startingScore}`);
+        $(`.playerScore p`).append(` ${startingScore}`);
         
         // 3) Once the text input and input button "Start Digging" is filled and clicked, update the li class "shovelRemaining" to one.
-        $(`.shovelRemaining`).append(` ${startingShovel}`);
+        $(`.shovelRemaining p`).append(` ${startingShovel}`);
 
         // 5) Randomizer to place a class of .treasure on one of the following islands randomly and store the value of 100 points.
         // buryRandomTreasure variable to hold the randomizer function
@@ -79,13 +80,11 @@ gameApp.init = function () {
         } else if (buryRandomTreasure === 3) {
             $(`.island3`).addClass(`treasureBuried`);
             console.log(`Island 3 🤫🤫🤫 Treasure Buried!!!`);
-        } else {
-            console.log(`error`);
-        }
+        } 
         
         $(`#startDigging`).hide();
         // checking the submit input has been committed
-        console.log(`Game has initiated!`);
+        // console.log(`Game has initiated!`);
     });
         
 
@@ -93,11 +92,11 @@ gameApp.init = function () {
 
     $(`li`).on(`click`, function () {
         if ($(this).hasClass(`treasureBuried`)) {
-            console.log(`🥳 TREASURE FOUND 💎 💯 POINTS!!!`);
+            // console.log(`🥳 TREASURE FOUND 💎 💯 POINTS!!!`);
             $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`🥳 TREASURE FOUND 💎 💯 POINTS!!!`);
             $(`.playerScore`).empty().fadeOut().fadeIn().append(`Player's Score: ${startingScore + treasureScore} Points`);
         } else {
-            console.log(`😭 Nothing Found 0 Points `);
+            // console.log(`😭 Nothing Found 0 Points `);
             $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`😭 Nothing Found 0 Points`);
         }
     });
@@ -117,13 +116,18 @@ gameApp.init = function () {
         // on click empties the li initiates a fadeOut and fadeIn animation, and appends class .shovelRemaining by subtracting one shovel from the Shovel Remaining count on the game status.
         $(`.shovelRemaining`).empty().fadeOut().fadeIn().append(`Shovels Remaining: ${startingShovel - 1} Points`);
 
-        // check if class li ".island" is initiated when clicked
-        console.log(`island has been Searched`);
+        if ($(`.shovelRemaining`) === gameOverShovel) {
+            alert(`GAME OVER!!!`);
+        }
 
-            
+        // check if class li ".island" is initiated when clicked
+        // console.log(`island has been Searched`);
+
     });
     
     // To restart the game by refreshing the page, will use location.reload to do so, by targeting the input button with the id #playAgain
+    
+
     // if (location.reload() =)
     //     location.reload(`#playAgain`);
     // });
