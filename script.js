@@ -19,6 +19,9 @@ let startingScore = 0;
 // User earns 100 points if treasure is found
 const treasureScore = 100;
 
+// User startingShovel is 1, is a let variable to change if score is increased.
+let startingShovel = 1;
+
 // create a variable randomizer function for reuseability
 const randomizer = function(array) {
     const randomArrayIndex = Math.floor(Math.random() * array.length);
@@ -54,15 +57,14 @@ gameApp.init = function () {
         $(`.playerScore`).append(` ${startingScore}`);
         
         // 3) Once the text input and input button "Start Digging" is filled and clicked, update the li class "shovelRemaining" to one.
-        $(`.shovelRemaining`).append(` 1`);
+        $(`.shovelRemaining`).append(` ${startingShovel}`);
 
         // 4) Randomizer to place a class of .treasure on one of the following islands randomly and store the value of 100 points.
         // buryRandomTreasure variable to hold the randomizer function
         const buryRandomTreasure = randomizer(randomTreasure);
 
-        // If statement conditional, will randomly place a class of .treasureBuried on one of the following random three islands
+        // If statement conditional, will randomly place a class of .treasureBuried on one of the following random three <li> selector with the class of island1, island2, island3. 
 
-        // ****** HOW TO MAKE APPENDED CLASS .treasureBuried A VALUE OF TRUE???? *****
         if (buryRandomTreasure === 1) {
             $(`.island1`).addClass(`treasureBuried`);
             console.log(`Island 1 🤫 Treasure Buried!`);
@@ -81,21 +83,21 @@ gameApp.init = function () {
     });
         
     
-    // if statement to update if the user clicked an island that has treasure or nothing, for each island result.
+    // If statement to update if the user clicked an island that has treasure or nothing, for each island result. When treasureBuried is found append game status and add 100 points if <li> with class of treasureBuried is found. Every time the user clicks on the island, subtract one shovel from the Shovel Remaining count on the game status.
 
-    // ***** NEED TO FIGURE OUT HOW TO HAVE EACH ISLAND === .treasureBuried *****
-    // HOW TO MAKE APPENDED CLASS .treasureBuried A VALUE OF TRUE????
     $(`li`).on(`click`, function () {
         $(this)
         console.log($(this));
         // island1 .updatedGameInfo
         if ($(this).hasClass(`treasureBuried`)) {
             console.log(`🥳 TREASURE FOUND!!! 💯 POINTS`);
-            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`🥳 TREASURE FOUND!!! 💯 POINTS`)
-            $(`.playerScore`).empty().fadeOut().fadeIn().append(`Player's Score: ${startingScore + treasureScore} Points`)
+            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`🥳 TREASURE FOUND!!! 💯 POINTS`);
+            $(`.playerScore`).empty().fadeOut().fadeIn().append(`Player's Score: ${startingScore + treasureScore} Points`);
+            $(`.shovelRemaining`).empty().fadeOut().fadeIn().append(`Shovels Remaining: ${startingShovel - 1} Points`);
         } else {
             console.log(`😭 Nothing Found 0 Points`);
-            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`😭 Nothing Found 0 Points`)
+            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`😭 Nothing Found 0 Points`);
+            $(`.shovelRemaining`).empty().fadeOut().fadeIn().append(`Shovels Remaining: ${startingShovel - 1} Points`);
         }
     });
 
