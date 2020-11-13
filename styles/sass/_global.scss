@@ -1,12 +1,13 @@
 
 // Global Styling
 
-    // Colour Palate 
-    $darkgray: darkgray;
-    $lightblue: lightblue;
+    // Colour Palette
+    $black: black; 
+    $blackTransparent: rgba(0, 0, 0, 0.7); 
+    $blue: rgb(0,36,230);
     $gold: gold;
-    $green: green;
-    $tan: rgb(215, 175, 106);
+    $white: rgb(227, 227, 227);
+    // $white: rgb(119, 189, 255);
 
 html {
     font-size: 62.5%;
@@ -16,11 +17,45 @@ html {
 
 body {
     font-size: 2.5rem;
-    background-color: $tan;
+    // Photo by Dariusz Sankowski on Unsplash ***
+    background-image: url(`../../../assets/dariusz-sankowski-3OiYMgDKJ6k-unsplash.jpg);
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
 }
 
 .wrapper {
     max-width: 1450px;
     width: 80%;
     margin: 0 auto;
+}
+
+// span global styles
+.blueColon {
+    color: $blue;
+    text-shadow: $black 3px 3px 10px;
+}
+
+.goldVariable {
+    color: $gold;
+    text-shadow: $black 3px 3px 10px;
+}
+
+.islandSearched {
+    color: red;
+    text-shadow: $black 3px 3px 10px;
+}
+
+// Transparent background boxes
+.gameRules,
+.gameInfo,
+.islandGrid {
+    background-color: $blackTransparent;
+    background-color: $blackTransparent;
+    padding: 0 20px;
+    padding-left: 50px;
+    margin-top: 50px;
 }

@@ -11,20 +11,20 @@
 </head>
 <body>
     <header>
-        <div class="wrapper">
+        <div class="wrapper gameRules">
             <h1>Treasure Hunt Game</h1>
             <div>
-                <p>How to play:</p>
-                <p>1) Please enter your name first, before clicking the “Start Digging” Button to play.</p>
+                <h2>How to play <span class="blueColon">:</span></h2>
+                <p>1) Please enter your name first, before clicking the “Start Digging” button to play.</p>
                 <p>2) Press the “Start Digging” button below, once you entered your name.</p>
                 <p>3) The objective is to find the treasure chest buried among one of the three islands.</p>
                 <p>4) You start off with 1 shovel, and each shovel has 1 use. If you have zero remaining shovels the game is over.</p>
                 <p>5) To Win the game, click on one of the following 3 islands to dig for treasure. If you find the buried treasure, YOU WIN!!!.</p>
-                <p>6) To play again, click the “Play Again?” Button at the bottom to restart the game.</p>
+                <p>6) To play again, click the “Play Again?” button at the bottom to restart the game.</p>
             </div>
             <form action="#">
                 <fieldset>
-                    <input type="text" value="" id="name" placeholder="Name" required>
+                    <input type="text" value="" id="name" placeholder=" Name" required>
                     <label class="srOnly" for="name">Name</label>
                     <input type="submit" value="Start Digging" id="startDigging">
                     <label class="srOnly" for="startDigging">Start Digging</label>
@@ -34,16 +34,16 @@
     </header>
     <main>
         <section class="wrapper">
-            <h2>Game Info:</h2>
             <ul class="gameInfo gameInfoWrapper">
+                <h2>Game Info <span class="blueColon">:</span></h2>
                 <li class="playerName">
-                    <p>Player Name:</p>
+                    <p>Player Name <span class="blueColon">:</span></p>
                 </li>
                 <li class="playerScore">
-                    <p class="playerScorePara">Player Score:</p>
+                    <p class="playerScorePara">Player Score <span class="blueColon">:</span></p>
                 </li>
                 <li class="shovelRemaining">
-                    <p>Shovels Remaining:</p>
+                    <p>Shovels Remaining <span class="blueColon">:</span></p>
                 </li>
             </ul>
             <ul class="islandGrid hideUntilSubmitted">

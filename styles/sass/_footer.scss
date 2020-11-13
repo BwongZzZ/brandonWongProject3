@@ -6,3 +6,9 @@ footer {
     font-size: 3rem;
 }
 
+footer p {
+    color: $gold;
+    text-shadow: $black 1px 1px 10px;
+    padding: 50px 0;
+}
+

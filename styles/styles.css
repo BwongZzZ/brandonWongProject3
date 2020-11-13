@@ -244,7 +244,12 @@ html {
 
 body {
   font-size: 2.5rem;
-  background-color: #d7af6a;
+  background-image: url(`../../../assets/dariusz-sankowski-3OiYMgDKJ6k-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
 }
 
 .wrapper {
@@ -253,13 +258,45 @@ body {
   margin: 0 auto;
 }
 
+.blueColon {
+  color: #0024e6;
+  text-shadow: black 3px 3px 10px;
+}
+
+.goldVariable {
+  color: gold;
+  text-shadow: black 3px 3px 10px;
+}
+
+.islandSearched {
+  color: red;
+  text-shadow: black 3px 3px 10px;
+}
+
+.gameRules,
+.gameInfo,
+.islandGrid {
+  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0 20px;
+  padding-left: 50px;
+  margin-top: 50px;
+}
+
 body {
   font-family: 'Bree Serif', serif;
 }
 
-h1,
+h1
 h2 {
   font-family: 'Pirata One', cursive;
+}
+
+h1,
+h2 {
+  color: gold;
+  text-shadow: black 1px 1px 10px;
+  padding: 10px 0;
 }
 
 h1 {
@@ -269,16 +306,49 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 30px 0;
-  font-size: 10rem;
-  color: gold;
+  font-size: 7rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+header .gameRules {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 50px 20px;
+  padding-left: 50px;
 }
 
 header div p {
-  padding: 10px 0;
+  color: #e3e3e3;
+  text-shadow: black 3px 3px 10px;
+  padding: 20px 0;
 }
 
-h2,
+input[type="text"] {
+  border: gold;
+}
+
+input::-webkit-input-placeholder {
+  color: gold;
+  background-color: black;
+}
+
+input:-ms-input-placeholder {
+  color: gold;
+  background-color: black;
+}
+
+input::-ms-input-placeholder {
+  color: gold;
+  background-color: black;
+}
+
+input::placeholder {
+  color: gold;
+  background-color: black;
+}
+
 form input,
 .gameInfo li {
   padding: 10px 0;
@@ -302,11 +372,17 @@ form input,
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 50px;
 }
 
 .gameInfo li {
   padding: 20px 0;
   width: calc(100% / 3);
+}
+
+.gameInfo p {
+  color: #e3e3e3;
+  text-shadow: black 3px 3px 10px;
 }
 
 .islandGrid {
@@ -330,6 +406,12 @@ footer {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   font-size: 3rem;
+}
+
+footer p {
+  color: gold;
+  text-shadow: black 1px 1px 10px;
+  padding: 50px 0;
 }
 
 @media (max-width: 380px) {

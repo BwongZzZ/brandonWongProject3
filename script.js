@@ -57,13 +57,13 @@ gameApp.init = function () {
         const userNameInput = $(`#name`).val();
 
         // 1) Once the text input and input button "Start Digging" is filled and clicked, append the typed text input into the li class "playerName".
-        $(`.playerName p`).append(` ${userNameInput}`);   
+        $(`.playerName p`).append(` <span class="goldVariable">${userNameInput}</span>`);   
         
         // 2) Once the text input and input button "Start Digging" is filled and clicked, update the li class "playerScore" to zero.
-        $(`.playerScore p`).append(` ${startingScore}`);
+        $(`.playerScore p`).append(` <span class="goldVariable">${startingScore}</span>`);
         
         // 3) Once the text input and input button "Start Digging" is filled and clicked, update the li class "shovelRemaining" to one.
-        $(`.shovelRemaining p`).append(` ${startingShovel}`);
+        $(`.shovelRemaining p`).append(` <span class="goldVariable">${startingShovel}</span>`);
 
         // 5) Randomizer to place a class of .treasure on one of the following islands randomly and store the value of 100 points.
         // buryRandomTreasure variable to hold the randomizer function
@@ -96,11 +96,11 @@ gameApp.init = function () {
         if ($(this).hasClass(`treasureBuried`)) {
             // console.log(`🥳 TREASURE FOUND 💎 💯 POINTS!!!`);
             $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`🥳 AWESOME DIGGING ${userNameInput}!!! YOU DISCOVERED TREASURE!!! 💎 💯 POINTS!!!`);
-            $(`.playerScore`).empty().fadeOut().fadeIn().append(`Player Score: ${startingScore + treasureScore} Points`);
+            $(`.playerScore`).empty().fadeOut().fadeIn().append(`<p>Player Score <span class="blueColon">:</span> <span class="goldVariable"> ${startingScore + treasureScore} Points</span></p>`);
             $(`.hideUntilGameOver`).show();
         } else {
             // console.log(`😭 Nothing Found 0 Points `);
-            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`😭 Good try ${userNameInput}, no treasure found. 0 Points`);
+            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`<p>😭 Good try ${userNameInput}, no treasure found. 0 Points</p>`);
             $(`.hideUntilGameOver`).show();
         } 
 
@@ -118,14 +118,14 @@ gameApp.init = function () {
     // Have an event listener on the li with class of ".island" when clicked console log.
     $(`.island`).on(`click`, function () {
 
-        const listItemIslandSearched = `<li class=".islandSearched">🔍 Searched Island 🔎</li>`;
+        const listItemIslandSearched = `<p class="islandSearched">🔍 Searched Island 🔎</p>`;
 
         // on click empties the li initiates a fadeOut and fadeIn animation, and appends <li> with the variable listItemIslandSearched.
         $(this).empty().fadeOut().fadeIn().append(listItemIslandSearched);
         $(`.island`).off(`click`);
 
         // on click empties the li initiates a fadeOut and fadeIn animation, and appends class .shovelRemaining by subtracting one shovel from the Shovel Remaining count on the game status.
-        $(`.shovelRemaining`).empty().fadeOut().fadeIn().append(`Shovels Remaining: ${startingShovel - 1}`);
+        $(`.shovelRemaining`).empty().fadeOut().fadeIn().append(`<p>Shovels Remaining <span class="blueColon">:</span> <span class="goldVariable">${startingShovel - 1}</span></p>`);
         
         // check if class li ".island" is initiated when clicked
         // console.log(`island has been Searched`);

@@ -1,4 +1,3 @@
-h2,
 form input,
 .gameInfo li {
     padding: 10px 0;
@@ -14,11 +13,17 @@ form input,
 
 .gameInfo {
     flex-direction: column;
+    padding: 50px;
 }
 
 .gameInfo li {
     padding: 20px 0;
     width: calc(100% / 3);
+}
+
+.gameInfo p {
+    color: $white;
+    text-shadow: $black 3px 3px 10px;
 }
 
 
