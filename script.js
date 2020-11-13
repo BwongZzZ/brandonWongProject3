@@ -90,28 +90,29 @@ gameApp.init = function () {
     // If statement to update if the user clicked an island that has treasure or nothing, for each island result. When treasureBuried is found append game status and add 100 points if <li> with class of treasureBuried is found. 
 
     $(`li`).on(`click`, function () {
-        if ($(this).hasClass(`treasureBuried`)) {
-            // console.log(`🥳 TREASURE FOUND 💎 💯 POINTS!!!`);
-            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`🥳 TREASURE FOUND 💎 💯 POINTS!!!`);
-            $(`.playerScore`).empty().fadeOut().fadeIn().append(`Player Score: ${startingScore + treasureScore} Points`);
-        } else {
-            // console.log(`😭 Nothing Found 0 Points `);
-            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`😭 Nothing Found 0 Points`);
-        }
 
-        // userNameInput scoped within the function call to allow the value to work in the if statement template literal.
         const userNameInput = $(`#name`).val();
 
-        // To restart the game by refreshing the page, will use location.reload to do so, by targeting the input button with the id #playAgain
-
-        // **** TRY TO FIND A IF STATEMENT THAT WORKS FOR YOU WIN ????? ****
-        if ($(`.playerScore`) === `Player Score: 100 Points`) {
-            console.log(`YOU WIN ${userNameInput}!!!`);
-            // $(`.hideUntilGameOver`).show();
-        } else {
-            console.log(`SORRY ${userNameInput} GAME OVER, PLAY AGAIN?`);
+        if ($(this).hasClass(`treasureBuried`)) {
+            // console.log(`🥳 TREASURE FOUND 💎 💯 POINTS!!!`);
+            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`🥳 AWESOME DIGGING ${userNameInput}!!! YOU DISCOVERED TREASURE!!! 💎 💯 POINTS!!!`);
+            $(`.playerScore`).empty().fadeOut().fadeIn().append(`Player Score: ${startingScore + treasureScore} Points`);
             $(`.hideUntilGameOver`).show();
-        }
+        } else {
+            // console.log(`😭 Nothing Found 0 Points `);
+            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`😭 Good try ${userNameInput}, no treasure found. 0 Points`);
+            $(`.hideUntilGameOver`).show();
+        } 
+
+
+        // **** Might use for more dynamic code for the when the shovel counter reaches zero to initiate GAME OVER ****
+        // if ($(`.playerScore`) === `Player Score: 100 Points`) {
+        //     console.log(`YOU WIN ${userNameInput}!!!`);
+        //     $(`.hideUntilGameOver`).show();
+        // } else {
+        //     console.log(`SORRY ${userNameInput} GAME OVER, PLAY AGAIN?`);
+        //     $(`.hideUntilGameOver`).show();
+        // }
     });
 
     // Have an event listener on the li with class of ".island" when clicked console log.
@@ -123,29 +124,26 @@ gameApp.init = function () {
         $(this).empty().fadeOut().fadeIn().append(listItemIslandSearched);
         $(`.island`).off(`click`);
 
-        // ***** use focusWithin() to target elements within the parent element  to apply a focus state. 
-        
-
         // on click empties the li initiates a fadeOut and fadeIn animation, and appends class .shovelRemaining by subtracting one shovel from the Shovel Remaining count on the game status.
         $(`.shovelRemaining`).empty().fadeOut().fadeIn().append(`Shovels Remaining: ${startingShovel - 1}`);
         
-        
-        
-
         // check if class li ".island" is initiated when clicked
         // console.log(`island has been Searched`);
 
     });
-    
-    
+
+    // To restart the game by refreshing the page, will use location.reload to do so, by targeting the input button with the id #playAgain
+    $(`#playAgain`).on(`click`, function() {
+            location.reload(`#playAgain`);
+    });
     
 
-    // if (location.reload() =)
-    //     location.reload(`#playAgain`);
-    // });
 }
-
 
 $(function () {
     gameApp.init();
 });
+
+ // ***** use focusWithin() to target elements within the parent element  to apply a focus state. 
+
+//  **** Remove all console.log when completed
