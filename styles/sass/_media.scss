@@ -1,0 +1,9 @@
+// media query @media (max-width:380px)
+@media (max-width:380px) {
+
+    .gameInfoWrapper {
+        max-width: 380px;
+        width: 50%;
+        margin: 0 auto;
+    }
+}

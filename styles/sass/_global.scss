@@ -1,0 +1,26 @@
+
+// Global Styling
+
+    // Colour Palate 
+    $darkgray: darkgray;
+    $lightblue: lightblue;
+    $gold: gold;
+    $green: green;
+    $tan: rgb(215, 175, 106);
+
+html {
+    font-size: 62.5%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 2.5rem;
+    background-color: $tan;
+}
+
+.wrapper {
+    max-width: 1450px;
+    width: 80%;
+    margin: 0 auto;
+}

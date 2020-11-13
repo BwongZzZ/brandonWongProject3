@@ -236,6 +236,106 @@ description
   overflow: hidden;
 }
 
+html {
+  font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 2.5rem;
+  background-color: #d7af6a;
+}
+
+.wrapper {
+  max-width: 1450px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+body {
+  font-family: 'Bree Serif', serif;
+}
+
+h1,
+h2 {
+  font-family: 'Pirata One', cursive;
+}
+
 h1 {
-  color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px 0;
+  font-size: 10rem;
+  color: gold;
+}
+
+header div p {
+  padding: 10px 0;
+}
+
+h2,
+form input,
+.gameInfo li {
+  padding: 10px 0;
+}
+
+.gameInfo,
+.islandGrid,
+.islandGrid li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.gameInfo {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.gameInfo li {
+  padding: 20px 0;
+  width: calc(100% / 3);
+}
+
+.islandGrid {
+  padding: 100px 0;
+}
+
+.islandGrid li {
+  margin: 50px 30px;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-size: 3rem;
+}
+
+@media (max-width: 380px) {
+  .gameInfoWrapper {
+    max-width: 380px;
+    width: 50%;
+    margin: 0 auto;
+  }
 }

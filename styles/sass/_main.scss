@@ -1,0 +1,31 @@
+h2,
+form input,
+.gameInfo li {
+    padding: 10px 0;
+}
+
+.gameInfo,
+.islandGrid,
+.islandGrid li {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gameInfo {
+    flex-direction: column;
+}
+
+.gameInfo li {
+    padding: 20px 0;
+    width: calc(100% / 3);
+}
+
+
+.islandGrid {
+    padding: 100px 0;
+}
+
+.islandGrid li {
+    margin: 50px 30px; 
+}
