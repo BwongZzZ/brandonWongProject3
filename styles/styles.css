@@ -243,8 +243,10 @@ html {
 }
 
 body {
-  font-size: 2.5rem;
-  background-image: url(`../../../assets/dariusz-sankowski-3OiYMgDKJ6k-unsplash.jpg);
+  font-size: 2.3rem;
+  line-height: 3rem;
+  letter-spacing: 0.2rem;
+  background-image: url(`../../../assets/dariuszSankowskiMapUnsplash.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -277,10 +279,31 @@ body {
 .gameInfo,
 .islandGrid {
   background-color: rgba(0, 0, 0, 0.7);
-  background-color: rgba(0, 0, 0, 0.7);
   padding: 0 20px;
   padding-left: 50px;
   margin-top: 50px;
+}
+
+.updatedGameInfo,
+.playAgainButtonBox {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 50px;
+}
+
+.updatedGameInfo p {
+  color: gold;
+  text-align: center;
+}
+
+fieldset,
+.playAgainButtonBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 body {
@@ -307,16 +330,17 @@ h1 {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 7rem;
+  padding-bottom: 30px;
+  line-height: 7rem;
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 header .gameRules {
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 50px 20px;
-  padding-left: 50px;
+  padding: 50px 50px;
 }
 
 header div p {
@@ -327,26 +351,87 @@ header div p {
 
 input[type="text"] {
   border: gold;
+  max-width: 250px;
 }
 
+input[type="submit"],
+input[type="button"],
 input::-webkit-input-placeholder {
-  color: gold;
-  background-color: black;
+  color: #0024e6;
+  background-color: #e9e9e9;
+  border: gold;
 }
 
+input[type="submit"],
+input[type="button"],
 input:-ms-input-placeholder {
-  color: gold;
-  background-color: black;
+  color: #0024e6;
+  background-color: #e9e9e9;
+  border: gold;
 }
 
+input[type="submit"],
+input[type="button"],
 input::-ms-input-placeholder {
-  color: gold;
-  background-color: black;
+  color: #0024e6;
+  background-color: #e9e9e9;
+  border: gold;
 }
 
+input[type="submit"],
+input[type="button"],
 input::placeholder {
-  color: gold;
-  background-color: black;
+  color: #0024e6;
+  background-color: #e9e9e9;
+  border: gold;
+}
+
+input[type="submit"] {
+  padding: 0 10px;
+}
+
+.islandButtons {
+  padding: 50px;
+  opacity: 0.5;
+}
+
+.islandButtonsIcon1 {
+  background-image: url(`../../../assets/islandIconCyan.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.islandButtonsIcon2 {
+  background-image: url(`../../../assets/islandIconPink.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.islandButtonsIcon3 {
+  background-image: url(`../../../assets/islandIconGreen.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.playAgainButton {
+  padding: 10px;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="button"]:hover,
+input[type="button"]:focus {
+  color: black;
+  background-color: gold;
+}
+
+input[type="submit"]:active,
+input[type="button"]:active {
+  color: red;
+  background-color: #0024e6;
 }
 
 form input,
@@ -417,7 +502,7 @@ footer p {
 @media (max-width: 380px) {
   .gameInfoWrapper {
     max-width: 380px;
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
   }
 }

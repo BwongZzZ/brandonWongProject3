@@ -9,19 +9,18 @@ h1 {
     display: flex;
     justify-content: center;
     font-size: 7rem;
+    padding-bottom: 30px;
+    line-height: 7rem;
 }
 
 h2 {
-    font-size: 4rem;
+    font-size: 3.5rem;
 }
 
 header .gameRules {
     background-color: $blackTransparent;
-    padding: 50px 20px;
-    padding-left: 50px;
+    padding: 50px 50px;
 }
-
-
 
 header div p {
     color: $white;
@@ -29,10 +28,66 @@ header div p {
     padding: 20px 0;
 }
 
+// button styles
+
 input[type="text"] {
     border: $gold;
+    max-width: 250px;
 }
+
+input[type="submit"],
+input[type="button"],
 input::placeholder {
-    color: $gold;
-    background-color: $black;
+    color: $blue;
+    background-color: rgb(233, 233, 233);
+    border: $gold;
+}
+
+input[type="submit"]{
+    padding: 0 10px;
+}
+
+.islandButtons {
+    padding: 50px;
+    opacity: 0.5;
+}
+
+.islandButtonsIcon1{
+    background-image: url(`../../../assets/islandIconCyan.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.islandButtonsIcon2{
+    background-image: url(`../../../assets/islandIconPink.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;}
+
+.islandButtonsIcon3{
+    background-image: url(`../../../assets/islandIconGreen.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+.playAgainButton {
+    padding: 10px;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="button"]:hover,
+input[type="button"]:focus{
+    color: $black;
+    background-color: $gold;
+}
+
+input[type="submit"]:active,
+input[type="button"]:active {
+    color: red;
+    background-color: $blue;
 }

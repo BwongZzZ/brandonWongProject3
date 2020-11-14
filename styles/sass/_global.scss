@@ -1,4 +1,3 @@
-
 // Global Styling
 
     // Colour Palette
@@ -16,10 +15,11 @@ html {
 }
 
 body {
-    font-size: 2.5rem;
-    // Photo by Dariusz Sankowski on Unsplash ***
-    background-image: url(`../../../assets/dariusz-sankowski-3OiYMgDKJ6k-unsplash.jpg);
-
+    font-size: 2.3rem;
+    line-height: 3rem;
+    letter-spacing: 0.2rem;
+    // Photo by Dariusz Sankowski on Unsplash
+    background-image: url(`../../../assets/dariuszSankowskiMapUnsplash.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -54,8 +54,26 @@ body {
 .gameInfo,
 .islandGrid {
     background-color: $blackTransparent;
-    background-color: $blackTransparent;
     padding: 0 20px;
     padding-left: 50px;
     margin-top: 50px;
+}
+
+.updatedGameInfo,
+.playAgainButtonBox  {
+    background-color: $blackTransparent;
+    padding: 50px;
+}
+
+.updatedGameInfo p {
+    color: $gold;
+    text-align: center;
+}
+
+// button styles
+fieldset,
+.playAgainButtonBox {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }

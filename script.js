@@ -37,7 +37,7 @@ gameApp.init = function () {
     // when page loads focus and active on the input
     $(`input`).focus();
     
-    // hide elements from page until initiated to show
+    // hides elements from page until initiated to show
     $(`.hideUntilSubmitted`).hide();
     $(`.hideUntilGameOver`).hide();
 
@@ -62,8 +62,8 @@ gameApp.init = function () {
         // 2) Once the text input and input button "Start Digging" is filled and clicked, update the li class "playerScore" to zero.
         $(`.playerScore p`).append(` <span class="goldVariable">${startingScore}</span>`);
         
-        // 3) Once the text input and input button "Start Digging" is filled and clicked, update the li class "shovelRemaining" to one.
-        $(`.shovelRemaining p`).append(` <span class="goldVariable">${startingShovel}</span>`);
+        // 3) Once the text input and input button "Start Digging" is filled and clicked, update the li class "shovelsLeft" to one.
+        $(`.shovelsLeft p`).append(` <span class="goldVariable">${startingShovel}</span>`);
 
         // 5) Randomizer to place a class of .treasure on one of the following islands randomly and store the value of 100 points.
         // buryRandomTreasure variable to hold the randomizer function
@@ -95,7 +95,7 @@ gameApp.init = function () {
 
         if ($(this).hasClass(`treasureBuried`)) {
             // console.log(`🥳 TREASURE FOUND 💎 💯 POINTS!!!`);
-            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`🥳 AWESOME DIGGING ${userNameInput}!!! YOU DISCOVERED TREASURE!!! 💎 💯 POINTS!!!`);
+            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`<p> 🥳 AWESOME DIGGING ${userNameInput}!!! YOU DISCOVERED TREASURE!!! 💎 💯 POINTS!!!</p>`);
             $(`.playerScore`).empty().fadeOut().fadeIn().append(`<p>Player Score <span class="blueColon">:</span> <span class="goldVariable"> ${startingScore + treasureScore} Points</span></p>`);
             $(`.hideUntilGameOver`).show();
         } else {
@@ -124,11 +124,12 @@ gameApp.init = function () {
         $(this).empty().fadeOut().fadeIn().append(listItemIslandSearched);
         $(`.island`).off(`click`);
 
-        // on click empties the li initiates a fadeOut and fadeIn animation, and appends class .shovelRemaining by subtracting one shovel from the Shovel Remaining count on the game status.
-        $(`.shovelRemaining`).empty().fadeOut().fadeIn().append(`<p>Shovels Remaining <span class="blueColon">:</span> <span class="goldVariable">${startingShovel - 1}</span></p>`);
+        // on click empties the li initiates a fadeOut and fadeIn animation, and appends class .shovelsLeft by subtracting one shovel from the shovelsLeft count on the game status.
+        $(`.shovelsLeft`).empty().fadeOut().fadeIn().append(`<p>Shovels Left <span class="blueColon">:</span> <span class="goldVariable">${startingShovel - 1}</span></p>`);
         
         // check if class li ".island" is initiated when clicked
         // console.log(`island has been Searched`);
+
 
     });
 

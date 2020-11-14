@@ -18,7 +18,7 @@
                 <p>1) Please enter your name first, before clicking the “Start Digging” button to play.</p>
                 <p>2) Press the “Start Digging” button below, once you entered your name.</p>
                 <p>3) The objective is to find the treasure chest buried among one of the three islands.</p>
-                <p>4) You start off with 1 shovel, and each shovel has 1 use. If you have zero remaining shovels the game is over.</p>
+                <p>4) You start off with 1 shovel, and each shovel has 1 use. If you have zero shovels left the game is over.</p>
                 <p>5) To Win the game, click on one of the following 3 islands to dig for treasure. If you find the buried treasure, YOU WIN!!!.</p>
                 <p>6) To play again, click the “Play Again?” button at the bottom to restart the game.</p>
             </div>
@@ -42,29 +42,31 @@
                 <li class="playerScore">
                     <p class="playerScorePara">Player Score <span class="blueColon">:</span></p>
                 </li>
-                <li class="shovelRemaining">
-                    <p>Shovels Remaining <span class="blueColon">:</span></p>
+                <li class="shovelsLeft">
+                    <p>Shovels Left <span class="blueColon">:</span></p>
                 </li>
             </ul>
             <ul class="islandGrid hideUntilSubmitted">
                 <li class="island island1">
-                    <input type="button" value="🏝 Island 1" id="islandButton1">
+                    <input type="button" value="" id="islandButton1" class="islandButtons islandButtonsIcon1">
                     <label for="islandButton1" class="srOnly">Island 1 Button</label>
                 </li>
                 <li class="island island2">
-                    <input type="button" value="🏝🏝 Island 2" id="islandButton2">
+                    <input type="button" value="" id="islandButton2" class="islandButtons islandButtonsIcon2">
                     <label for="islandButton2" class="srOnly">Island 2 Button</label>
                 </li>
                 <li class="island island3">
-                    <input type="button" value="🏝🏝🏝 Island 3" id="islandButton3">
+                    <input type="button" value="" id="islandButton3" class="islandButtons islandButtonsIcon3">
                     <label for="islandButton3" class="srOnly">Island 3 Button</label>
                 </li>
             </ul>
             <!-- updated game info is added here with JS -->
             <div class="updatedGameInfo">
             </div>
-            <input type="button" value="Play Again?" id="playAgain" class="hideUntilGameOver">
-            <label class="srOnly" for="playAgain"></label>
+            <div class="playAgainButtonBox">
+                <input type="button" value="Play Again?" id="playAgain" class="hideUntilGameOver playAgainButton">
+                <label class="srOnly" for="playAgain"></label>
+            </div>
         </section>
     </main>
     <footer>
