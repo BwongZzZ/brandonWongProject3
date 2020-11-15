@@ -39,6 +39,10 @@ body {
     text-shadow: $black 3px 3px 10px;
 }
 
+.numberColor {
+    color: $gold;
+}
+
 .goldVariable {
     color: $gold;
     text-shadow: $black 3px 3px 10px;
@@ -55,14 +59,13 @@ body {
 .islandGrid {
     background-color: $blackTransparent;
     padding: 0 20px;
-    padding-left: 50px;
     margin-top: 50px;
 }
 
 .updatedGameInfo,
 .playAgainButtonBox  {
     background-color: $blackTransparent;
-    padding: 50px;
+    padding-bottom: 50px;
 }
 
 .updatedGameInfo p {

@@ -95,7 +95,7 @@ gameApp.init = function () {
 
         if ($(this).hasClass(`treasureBuried`)) {
             // console.log(`🥳 TREASURE FOUND 💎 💯 POINTS!!!`);
-            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`<p> 🥳 AWESOME DIGGING ${userNameInput}!!! YOU DISCOVERED TREASURE!!! 💎 💯 POINTS!!!</p>`);
+            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`<p> 🥳 Awesome Digging ${userNameInput}!!! 💎 You Discovered Treasure!!! 💯 POINTS!!!</p><div class="treasureImg"><img src="./assets/treasureChestColor.png" alt="brown treasure chest filled with gold coins, emeralds and sapphire"></div>`);
             $(`.playerScore`).empty().fadeOut().fadeIn().append(`<p>Player Score <span class="blueColon">:</span> <span class="goldVariable"> ${startingScore + treasureScore} Points</span></p>`);
             $(`.hideUntilGameOver`).show();
         } else {
@@ -118,7 +118,9 @@ gameApp.init = function () {
     // Have an event listener on the li with class of ".island" when clicked console log.
     $(`.island`).on(`click`, function () {
 
-        const listItemIslandSearched = `<p class="islandSearched">🔍 Searched Island 🔎</p>`;
+        // const listItemIslandSearched = `<p class="islandSearched">🔍 Searched Island 🔎</p>`;
+
+        const listItemIslandSearched = `<p class="islandSearched"><img src="./assets/shovelDigColor.png" alt="shovel planted in the dirt"></p>`;
 
         // on click empties the li initiates a fadeOut and fadeIn animation, and appends <li> with the variable listItemIslandSearched.
         $(this).empty().fadeOut().fadeIn().append(listItemIslandSearched);
@@ -136,6 +138,7 @@ gameApp.init = function () {
     // To restart the game by refreshing the page, will use location.reload to do so, by targeting the input button with the id #playAgain
     $(`#playAgain`).on(`click`, function() {
             location.reload(`#playAgain`);
+        $(`#header`)
     });
     
 

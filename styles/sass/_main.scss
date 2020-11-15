@@ -24,12 +24,27 @@ form input,
 .gameInfo p {
     color: $white;
     text-shadow: $black 3px 3px 10px;
-}
-
-.islandGrid {
-    padding: 100px 0;
+    min-width: 300px;
 }
 
 .islandGrid li {
     margin: 50px 30px; 
+}
+
+.islandButtons {
+    padding: 140px;
+}
+
+.updatedGameInfo {
+    padding: 0 0 50px 0;
+}
+
+.islandSearched {
+    padding-top: 15px;
+}
+
+.treasureImg {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
 }

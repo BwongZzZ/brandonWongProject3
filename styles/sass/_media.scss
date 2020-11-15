@@ -1,5 +1,54 @@
+// media query @media (max-width:1000px)
+@media (max-width:1000px) {
+
+    h1,
+    footer p {
+        text-align: center;
+    }
+
+    footer p {
+        font-size: 2rem;
+    }
+}
+
+// media query @media (max-width:642px)
+@media (max-width:642px) {
+
+    input[type="text"] {
+        width: 200px;
+        height: 50px;
+    }
+
+    input[type="submit"] {
+        padding: 10px;
+    }
+
+
+}
+
+// media query @media (max-width:579px)
+@media (max-width:579px) {
+
+    input[type="text"] {
+        margin-top: 20px;
+    }
+
+    input[type="submit"] {
+        padding: 10px;
+        margin-top: 40px;
+    }
+}
+
 // media query @media (max-width:380px)
-@media (max-width:380px) {
+@media (max-width:480px) {
+
+    h1 {
+        font-size: 6rem;
+    }
+    
+    h2 {
+        font-size: 2.8rem;
+    }
 
     .gameInfoWrapper {
         max-width: 380px;
