@@ -1,6 +1,5 @@
 // Treasure Hunt Game 
 
-
 // Check whether out document is ready for JS
 
 // Namespace gameApp
@@ -42,11 +41,8 @@ gameApp.init = function () {
     $(`.hideUntilGameOver`).hide();
 
     // When the the user to press the `Start Digging` to Initiate the game (Only if name input has been filled)
-    // input the user to type their name (requirement)
+        // input the user to type their name (requirement)
     $(`form`).on(`submit`, function(event) {
-
-        // check if form is submitted
-        // console.log(`Start Digging button has been submitted`);
 
         // Prevent the default behaviour of the page from refreshing
         event.preventDefault();
@@ -65,25 +61,20 @@ gameApp.init = function () {
         // 3) Once the text input and input button "Start Digging" is filled and clicked, update the li class "shovelsLeft" to one.
         $(`.shovelsLeft p`).append(` <span class="goldVariable">${startingShovel}</span>`);
 
-        // 5) Randomizer to place a class of .treasure on one of the following islands randomly and store the value of 100 points.
-        // buryRandomTreasure variable to hold the randomizer function
+        // 4) Randomizer to place a class of .treasure on one of the following islands randomly and store the value of 100 points.
+            // buryRandomTreasure variable to hold the randomizer function
         const buryRandomTreasure = randomizer(randomTreasure);
 
         // If statement conditional, will randomly place a class of .treasureBuried on one of the following random three <li> selector with the class of island1, island2, island3. 
         if (buryRandomTreasure === 1) {
             $(`.island1`).addClass(`treasureBuried`);
-            console.log(`Island 1 🤫 Treasure Buried!`);
         } else if (buryRandomTreasure === 2) {
             $(`.island2`).addClass(`treasureBuried`);
-            console.log(`Island 2 🤫🤫 Treasure Buried!!`);
         } else if (buryRandomTreasure === 3) {
             $(`.island3`).addClass(`treasureBuried`);
-            console.log(`Island 3 🤫🤫🤫 Treasure Buried!!!`);
-        } 
-        
+        }         
+        $(`#name`).hide();
         $(`#startDigging`).hide();
-        // checking the submit input has been committed
-        // console.log(`Game has initiated!`);
     });
         
 
@@ -93,33 +84,21 @@ gameApp.init = function () {
 
         const userNameInput = $(`#name`).val();
 
+        // The Noun Project Image By Edwin PM, ID 
         if ($(this).hasClass(`treasureBuried`)) {
-            // console.log(`🥳 TREASURE FOUND 💎 💯 POINTS!!!`);
             $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`<p> 🥳 Awesome Digging ${userNameInput}!!! 💎 You Discovered Treasure!!! 💯 POINTS!!!</p><div class="treasureImg"><img src="./assets/treasureChestColor.png" alt="brown treasure chest filled with gold coins, emeralds and sapphire"></div>`);
             $(`.playerScore`).empty().fadeOut().fadeIn().append(`<p>Player Score <span class="blueColon">:</span> <span class="goldVariable"> ${startingScore + treasureScore} Points</span></p>`);
             $(`.hideUntilGameOver`).show();
         } else {
-            // console.log(`😭 Nothing Found 0 Points `);
             $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`<p>😭 Good try ${userNameInput}, no treasure found. 0 Points</p>`);
             $(`.hideUntilGameOver`).show();
         } 
-
-
-        // **** Might use for more dynamic code for the when the shovel counter reaches zero to initiate GAME OVER ****
-        // if ($(`.playerScore`) === `Player Score: 100 Points`) {
-        //     console.log(`YOU WIN ${userNameInput}!!!`);
-        //     $(`.hideUntilGameOver`).show();
-        // } else {
-        //     console.log(`SORRY ${userNameInput} GAME OVER, PLAY AGAIN?`);
-        //     $(`.hideUntilGameOver`).show();
-        // }
     });
 
     // Have an event listener on the li with class of ".island" when clicked console log.
     $(`.island`).on(`click`, function () {
 
-        // const listItemIslandSearched = `<p class="islandSearched">🔍 Searched Island 🔎</p>`;
-
+        // The Noun Project Image By Lemon Liu, NZ
         const listItemIslandSearched = `<p class="islandSearched"><img src="./assets/shovelDigColor.png" alt="shovel planted in the dirt"></p>`;
 
         // on click empties the li initiates a fadeOut and fadeIn animation, and appends <li> with the variable listItemIslandSearched.
@@ -128,11 +107,6 @@ gameApp.init = function () {
 
         // on click empties the li initiates a fadeOut and fadeIn animation, and appends class .shovelsLeft by subtracting one shovel from the shovelsLeft count on the game status.
         $(`.shovelsLeft`).empty().fadeOut().fadeIn().append(`<p>Shovels Left <span class="blueColon">:</span> <span class="goldVariable">${startingShovel - 1}</span></p>`);
-        
-        // check if class li ".island" is initiated when clicked
-        // console.log(`island has been Searched`);
-
-
     });
 
     // To restart the game by refreshing the page, will use location.reload to do so, by targeting the input button with the id #playAgain
@@ -140,14 +114,8 @@ gameApp.init = function () {
             location.reload(`#playAgain`);
         $(`#header`)
     });
-    
-
 }
 
 $(function () {
     gameApp.init();
 });
-
- // ***** use focusWithin() to target elements within the parent element  to apply a focus state. 
-
-//  **** Remove all console.log when completed

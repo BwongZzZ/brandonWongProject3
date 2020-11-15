@@ -60,14 +60,19 @@ input[type="submit"]{
     background-repeat: no-repeat;
 }
 
+// island images styles
+
+// The Noun Project Image By Ninejipjip 
 .islandButtonsIcon1{
     background-image: url(`../../../assets/islandIconCyan.png);
 }
 
+// The Noun Project Image By Ninejipjip 
 .islandButtonsIcon2{
     background-image: url(`../../../assets/islandIconPink.png);
 }
 
+// The Noun Project Image By Ninejipjip 
 .islandButtonsIcon3{
     background-image: url(`../../../assets/islandIconGreen.png);
 }
@@ -88,6 +93,6 @@ input[type="button"]:focus{
 
 input[type="submit"]:active,
 input[type="button"]:active {
-    color: red;
+    color: $red;
     background-color: $blue;
 }

@@ -10,18 +10,20 @@
     <title>Brandon Wong's Treasure Hunt Javascript Game</title>
 </head>
 <body>
+    <!-- Header Begins -->
     <header id="header">
+        <!-- .gameRules Div Begins -->
         <div class="wrapper gameRules">
             <h1>Treasure Hunt Game</h1>
             <div>
                 <h2>How to play <span class="blueColon">:</span></h2>
                 <p><span class="numberColor">1</span><span class="blueColon">)</span> Please enter your name first, before clicking the “Start Digging” button to play.</p>
-                <p><span class="numberColor">2</span><span class="blueColon">)</span> Press the “Start Digging” button to start the game, and find the buried treasure  chest.</p>
-                <p><span class="numberColor">3</span><span class="blueColon">)</span> The objective is to find the treasure chest buried among one of the three islands.</p>
-                <p><span class="numberColor">4</span><span class="blueColon">)</span> You start off with 1 shovel, and each shovel has 1 use. If you have zero shovels left the game is over.</p>
-                <p><span class="numberColor">5</span><span class="blueColon">)</span> To Win the game, click on one of the following 3 islands to dig for treasure. If you find the buried treasure, YOU WIN!!!.</p>
-                <p><span class="numberColor">6</span><span class="blueColon">)</span> To play again, click the “Play Again?” button at the bottom to restart the game.</p>
+                <p><span class="numberColor">2</span><span class="blueColon">)</span> The objective is to find the treasure chest buried among one of the three islands (Please find island images below).</p>
+                <p><span class="numberColor">3</span><span class="blueColon">)</span> You start off with one shovel, and each shovel has one dig use. If you have zero shovels left the game is over.</p>
+                <p><span class="numberColor">4</span><span class="blueColon">)</span> Click on one of the following three islands to dig for treasure. If you find the buried treasure, YOU WIN!!!.</p>
+                <p><span class="numberColor">5</span><span class="blueColon">)</span> To play again, click the “Play Again?” button at the bottom to restart the game. Good luck!!! Happy Treasure Hunting!!!</p>
             </div>
+            <!-- Form Div Begins -->
             <form action="#">
                 <fieldset>
                     <input type="text" value="" id="name" placeholder=" Name" required>
@@ -30,9 +32,13 @@
                     <label class="srOnly" for="startDigging">Start Digging</label>
                 </fieldset>
             </form>
+            <!-- Form Div Ends -->
         </div>
+        <!-- .gameRules Div Ends -->
     </header>
+        <!-- Header Ends -->
     <main>
+        <!-- Main Section for Game Content Begins -->
         <section class="wrapper">
             <ul class="gameInfo gameInfoWrapper">
                 <h2>Game Info <span class="blueColon">:</span></h2>
@@ -48,27 +54,28 @@
             </ul>
             <ul class="islandGrid hideUntilSubmitted">
                 <li class="island island1">
-                    <input type="button" value="" id="islandButton1" class="islandButtons islandButtons islandButtonsIcon1">
+                    <input type="button" value="" id="islandButton1" class="islandButtons islandButtons islandButtonsIcon1" alt="Blue background island">
                     <label for="islandButton1" class="srOnly">Island 1 Button</label>
                 </li>
                 <li class="island island2">
-                    <input type="button" value="" id="islandButton2" class="islandButtons islandButtons islandButtonsIcon2">
+                    <input type="button" value="" id="islandButton2" class="islandButtons islandButtons islandButtonsIcon2" alt="Pink background island">
                     <label for="islandButton2" class="srOnly">Island 2 Button</label>
                 </li>
                 <li class="island island3">
-                    <input type="button" value="" id="islandButton3" class="islandButtons islandButtons islandButtonsIcon3">
+                    <input type="button" value="" id="islandButton3" class="islandButtons islandButtons islandButtonsIcon3" alt="Green background island">
                     <label for="islandButton3" class="srOnly">Island 3 Button</label>
                 </li>
             </ul>
             <!-- updated game info is added here with JS -->
             <div class="updatedGameInfo">
+                <!-- Updated Game Content Goes Here -->
             </div>
             <div class="playAgainButtonBox">
-                <!-- add attr in input onclick="location.href='LIVE LINK HERE';" when page is live --> 
                 <input type="button" value="Play Again?" id="playAgain" class="hideUntilGameOver playAgainButton">
                 <label class="srOnly" for="playAgain"></label>
             </div>
         </section>
+        <!-- Main Section for Game Content Ends -->
     </main>
     <footer>
         <p>&copy; Copyright Brandon Wong Juno College 2020</p>

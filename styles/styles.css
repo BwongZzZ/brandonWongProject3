@@ -543,10 +543,14 @@ footer p {
 @media (max-width: 579px) {
   input[type="text"] {
     margin-top: 20px;
+    width: 100%;
   }
   input[type="submit"] {
     padding: 10px;
     margin-top: 40px;
+  }
+  .gameInfo p {
+    min-width: 100px;
   }
 }
 
