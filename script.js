@@ -85,7 +85,7 @@ gameApp.init = function () {
 
         // The Noun Project Image By Edwin PM, ID 
         if ($(this).hasClass(`treasureBuried`)) {
-            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`<p> 🥳 Awesome Digging <span class="goldVariable">${userNameInput}</span>!!! 💎 You Discovered Treasure!!! 💯 POINTS!!!</p><div class="treasureImg"><img src="./assets/treasureChestColor.png" alt="brown treasure chest filled with gold coins, emeralds and sapphire"></div>`);
+            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`<p> 🥳 Awesome Digging <span class="goldVariable">${userNameInput}</span>!!! 💎 You Discovered Treasure!!! <span class="goldVariable">${treasureScore} Points</span>!!!</p><div class="treasureImg"><img src="./assets/treasureChestColor.png" alt="brown treasure chest filled with gold coins, emeralds and sapphire"></div>`);
             $(`.playerScore`).empty().fadeOut().fadeIn().append(`<p>Player Score <span class="blueColon">:</span> <span class="goldVariable"> ${startingScore + treasureScore} Points</span></p>`);
             $(`.hideUntilGameOver`).show();
         } else {
