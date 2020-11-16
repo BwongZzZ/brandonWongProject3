@@ -27,7 +27,6 @@ const randomizer = function(array) {
     return array[randomArrayIndex];
 }
 
-
 // initiate the js functions for game app
 gameApp.init = function () {
 
@@ -86,11 +85,11 @@ gameApp.init = function () {
 
         // The Noun Project Image By Edwin PM, ID 
         if ($(this).hasClass(`treasureBuried`)) {
-            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`<p> 🥳 Awesome Digging ${userNameInput}!!! 💎 You Discovered Treasure!!! 💯 POINTS!!!</p><div class="treasureImg"><img src="./assets/treasureChestColor.png" alt="brown treasure chest filled with gold coins, emeralds and sapphire"></div>`);
+            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`<p> 🥳 Awesome Digging <span class="goldVariable">${userNameInput}</span>!!! 💎 You Discovered Treasure!!! 💯 POINTS!!!</p><div class="treasureImg"><img src="./assets/treasureChestColor.png" alt="brown treasure chest filled with gold coins, emeralds and sapphire"></div>`);
             $(`.playerScore`).empty().fadeOut().fadeIn().append(`<p>Player Score <span class="blueColon">:</span> <span class="goldVariable"> ${startingScore + treasureScore} Points</span></p>`);
             $(`.hideUntilGameOver`).show();
         } else {
-            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`<p>😭 Good try ${userNameInput}, no treasure found. 0 Points</p>`);
+            $(`.updatedGameInfo`).empty().fadeOut().fadeIn().append(`<p>😭 Good try <span class="goldVariable">${userNameInput}</span>, no treasure found. <span class="goldVariable">0</span> Points</p>`);
             $(`.hideUntilGameOver`).show();
         } 
     });

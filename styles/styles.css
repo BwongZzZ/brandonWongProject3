@@ -266,16 +266,16 @@ body {
 }
 
 .numberColor {
-  color: gold;
+  color: #ffd900;
 }
 
 .goldVariable {
-  color: gold;
+  color: #ffd900;
   text-shadow: black 3px 3px 10px;
 }
 
 .islandSearched {
-  color: red;
+  color: #fc0000;
   text-shadow: black 3px 3px 10px;
 }
 
@@ -294,7 +294,7 @@ body {
 }
 
 .updatedGameInfo p {
-  color: gold;
+  color: #ffd900;
   text-align: center;
 }
 
@@ -320,7 +320,7 @@ h2 {
 
 h1,
 h2 {
-  color: gold;
+  color: #ffd900;
   text-shadow: black 1px 1px 10px;
   padding: 10px 0;
 }
@@ -353,7 +353,7 @@ header div p {
 }
 
 input[type="text"] {
-  border: gold;
+  border: #ffd900;
   max-width: 250px;
   padding: 10px;
 }
@@ -363,7 +363,7 @@ input[type="button"],
 input::-webkit-input-placeholder {
   color: #0024e6;
   background-color: #e9e9e9;
-  border: gold;
+  border: #ffd900;
 }
 
 input[type="submit"],
@@ -371,7 +371,7 @@ input[type="button"],
 input:-ms-input-placeholder {
   color: #0024e6;
   background-color: #e9e9e9;
-  border: gold;
+  border: #ffd900;
 }
 
 input[type="submit"],
@@ -379,7 +379,7 @@ input[type="button"],
 input::-ms-input-placeholder {
   color: #0024e6;
   background-color: #e9e9e9;
-  border: gold;
+  border: #ffd900;
 }
 
 input[type="submit"],
@@ -387,7 +387,7 @@ input[type="button"],
 input::placeholder {
   color: #0024e6;
   background-color: #e9e9e9;
-  border: gold;
+  border: #ffd900;
 }
 
 input[type="submit"] {
@@ -427,12 +427,12 @@ input[type="submit"]:focus,
 input[type="button"]:hover,
 input[type="button"]:focus {
   color: black;
-  background-color: gold;
+  background-color: #ffd900;
 }
 
 input[type="submit"]:active,
 input[type="button"]:active {
-  color: red;
+  color: #fc0000;
   background-color: #0024e6;
 }
 
@@ -467,7 +467,8 @@ form input,
   width: calc(100% / 3);
 }
 
-.gameInfo p {
+.gameInfo p,
+.updatedGameInfo p {
   color: #e3e3e3;
   text-shadow: black 3px 3px 10px;
   min-width: 300px;
@@ -515,7 +516,7 @@ footer {
 }
 
 footer p {
-  color: gold;
+  color: #ffd900;
   text-shadow: black 1px 1px 10px;
   padding: 50px 0;
 }

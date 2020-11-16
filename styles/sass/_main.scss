@@ -21,7 +21,8 @@ form input,
     width: calc(100% / 3);
 }
 
-.gameInfo p {
+.gameInfo p,
+.updatedGameInfo p {
     color: $white;
     text-shadow: $black 3px 3px 10px;
     min-width: 300px;
